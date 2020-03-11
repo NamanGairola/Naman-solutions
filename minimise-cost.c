@@ -15,6 +15,7 @@ int main()
         if(arr[i]<0)
         {
             //to get left most value from arr[i] of which value it can gain
+            //modj contain leftmost value greater than 0 from previous operations
             j=i-k;
             if(j<modj)
             {
