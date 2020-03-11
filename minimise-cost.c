@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int n,k,shift,i,j;
+    int n,k,shift,i,j,modj=0;
     long long int sum=0;
     scanf("%d%d",&n,&k);
     int arr[n];
@@ -16,9 +16,9 @@ int main()
         {
             //to get left most value from arr[i] of which value it can gain
             j=i-k;
-            if(j<0)
+            if(j<modj)
             {
-                j=0;
+                j=modj;
             }
             for(;j<=i+k && j<n;j++)
             {
@@ -39,6 +39,7 @@ int main()
                     }
                 }
             }
+            modj=j;
         }
     }
     for(i=0;i<n;i++)
